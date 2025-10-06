@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Landing Page - RED KING</title>
+  <style>
+    :root{
+      --green: #25d366;
+      --dark: #111;
+      --card-bg: #0f0f10;
+    }
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background:#fff;
+      color:#222;
+      text-align:center;
+      padding-bottom:72px; /* espacio para footer fijo */
+    }
+
+    header img{ width:80px; margin-top:18px; }
+
+    .logo-central{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:50%;
+      margin:20px auto;
+      display:block;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{ font-size:1.5rem; margin:6px 0; font-weight:700; }
+    h2{ color:#00c853; margin:4px 0 18px; font-weight:600; }
+
+    .mensaje{
+      background:#f1f9f6;
+      padding:14px 18px;
+      margin:18px auto;
+      width:88%;
+      border-radius:12px;
+      font-size:1rem;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+    }
+
+    .whatsapp-btn{
+      display:inline-block;
+      background:var(--green);
+      color:white;
+      font-size:1.05rem;
+      font-weight:700;
+      padding:14px 26px;
+      border-radius:50px;
+      text-decoration:none;
+      margin:18px 12px;
+      box-shadow: 0 6px 18px rgba(37,211,102,0.18);
+    }
+    .whatsapp-btn:active{ transform:translateY(1px); }
+
+    .badge{
+      background: linear-gradient(90deg,#00c2c9,#00aee0);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:40px;
+      font-size:0.95rem;
+      display:inline-block;
+      margin:12px 0;
+      box-shadow:0 6px 16px rgba(0,0,0,0.07);
+    }
+
+    .trust{
+      border:2px dashed #d6d6d6;
+      padding:10px 12px;
+      margin:18px auto;
+      width:88%;
+      border-radius:12px;
+      font-size:0.95rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    /* RESEÑA flotante (caja negra) */
+    .floating-review{
+      position: fixed;
+      left: 24px;
+      bottom: 92px; /* sobre el footer fijo*/
+      background: rgba(17,17,17,0.98);
+      color: #fff;
+      padding:14px 16px;
+      border-radius:10px;
+      min-width:260px;
+      max-width:340px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      display:flex;
+      gap:12px;
+      align-items:center;
+      transform-origin: left bottom;
+      z-index:60;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .45s ease, transform .45s cubic-bezier(.2,.9,.2,1);
+      transform: translateY(10px) scale(.98);
+    }
+
+    .floating-review.visible{
+      opacity:1;
+      pointer-events:auto;
+      transform: translateY(0) scale(1);
+    }
+
+    .review-avatar{
+      width:52px;
+      height:52px;
+      border-radius:8px;
+      background:linear-gradient(180deg,#6b6bff,#2ec4b6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:white;
+      font-size:0.85rem;
+      flex-shrink:0;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+
+    .review-content{ text-align:left; font-size:0.95rem; line-height:1.2; }
+
+    .review-name{ font-weight:700; margin-bottom:4px; }
+    .review-amount{ color:#2ed573; font-weight:700; margin-bottom:6px; display:inline-block; }
+    .review-meta{ font-size:0.82rem; color:#cfcfcf; }
+
+    /* Footer verde fijo */
+    .footer{
+      background:var(--green);
+      color:#fff;
+      font-weight:700;
+      padding:12px 16px;
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      width:100%;
+      text-align:center;
+      z-index:50;
+      box-shadow: 0 -6px 18px rgba(0,0,0,0.12);
+    }
+
+    /* Responsividad */
+    @media (max-width:420px){
+      .floating-review{ left:12px; right:12px; min-width:unset; max-width:calc(100% - 24px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- logo whatsapp -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
+  </header>
+
+  <!-- Nueva imagen redonda debajo del logo de WhatsApp -->
+  <img class="logo-central" src="https://i.imgur.com/EBoOzxo.jpeg" alt="RED KING">
+
+  <h1>RED KING</h1>
+  <h2>C4sin0 de Confianza</h2>
+
+  <div class="mensaje">🎁 B0N0 40% ACTIV0, Pedilo vía WhatsApp.</div>
+
+  <!-- reemplaza TU_NUMERO por tu número en formato internacional sin signos -->
+  <a class="whatsapp-btn" href="https://wa.me/+5493563415559" target="_blank" rel="noopener">Ir a WhatsApp Ahora</a>
+
+  <div style="height:8px"></div>
+  <div class="badge">👥 +10.000 CL1ENTES GANAND0 todos los días</div>
+
+  <div class="trust">
+    "Excelente" ⭐⭐⭐⭐⭐ &nbsp; Calificación 4.9/5 en Trustpilot
+  </div>
+
+  <!-- Esta caja flotante cambiará -->
+  <div id="floatingReview" class="floating-review" aria-live="polite">
+    <div class="review-avatar" id="rv-avatar">LC</div>
+    <div class="review-content">
+      <div class="review-name" id="rv-name">Laura Castro</div>
+      <div class="review-amount" id="rv-amount">RETIRO EFECTIVO 12500</div>
+      <div class="review-meta" id="rv-meta">📍 Córdoba • hace 1 hora</div>
+    </div>
+  </div>
+
+  <div style="height:260px"></div> <!-- espaciador para visual -->
+
+  <div class="footer">🎁 B0NUS DE 40% EN LA PRIMERA CARG4 - ¡Solicitalo ahora por WhatsApp!</div>
+
+  <script>
+    // Lista de reseñas ficticias (nombres, montos aproximados y ciudades)
+    const testimonials = [
+      { name: "Laura Castro", amount: 125000, city: "Córdoba", minutes: 60 },
+      { name: "Martín López", amount: 430000, city: "Buenos Aires", minutes: 12 },
+      { name: "Sofía Pérez", amount: 78000, city: "Rosario", minutes: 8 },
+      { name: "Diego Ramos", amount: 210000, city: "Mendoza", minutes: 35 },
+      { name: "Mariana Gómez", amount: 50000, city: "Salta", minutes: 25 },
+      { name: "Facundo Díaz", amount: 1600000, city: "CABA", minutes: 5 },
+      { name: "Camila Ruiz", amount: 980000, city: "Neuquén", minutes: 90 },
+      { name: "Nicolás Herrera", amount: 300000, city: "Bahía Blanca", minutes: 18 },
+      { name: "Valentina Torres", amount: 72000, city: "Paraná", minutes: 40 },
+      { name: "Tomás Alvarez", amount: 25000, city: "Salta", minutes: 3 }
+    ];
+
+    // Formatea número con separador de miles
+    function formatMoney(n){
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // 12.500
+    }
+
+    // Selección y transición
+    const reviewBox = document.getElementById("floatingReview");
+    const rvAvatar = document.getElementById("rv-avatar");
+    const rvName = document.getElementById("rv-name");
+    const rvAmount = document.getElementById("rv-amount");
+    const rvMeta = document.getElementById("rv-meta");
+
+    let idx = 0;
+
+    function showTestimonial(i){
+      const t = testimonials[i];
+      // Avatar con iniciales
+      const initials = t.name.split(" ").map(s => s[0]).slice(0,2).join("").toUpperCase();
+      rvAvatar.textContent = initials;
+
+      // Cambiamos la info
+      rvName.textContent = t.name;
+      rvAmount.textContent = `RETIR0 EFECTIV0 ${formatMoney(t.amount)}`;
+      // tiempo relativo simple
+      const minutes = t.minutes;
+      const timeText = minutes < 60 ? `hace ${minutes} ${minutes === 1 ? 'minuto' : 'minutos'}` : `hace ${Math.round(minutes/60)} ${Math.round(minutes/60) === 1 ? 'hora' : 'horas'}`;
+      rvMeta.textContent = `📍 ${t.city} • ${timeText}`;
+
+      // animación: mostrar, esperar, ocultar
+      reviewBox.classList.add("visible");
+
+      // después de 3.4s empezar a ocultar
+      setTimeout(()=> {
+        reviewBox.classList.remove("visible");
+      }, 3400);
+    }
+
+    // ciclo continuo
+    showTestimonial(idx);
+    setInterval(() => {
+      idx = (idx + 1) % testimonials.length;
+      showTestimonial(idx);
+    }, 4200); // cada 4.2s cambia a la próxima
+  </script>
+</body>
+</html>
+
